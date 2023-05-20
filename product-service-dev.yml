@@ -2,5 +2,5 @@ mongodb:
     connection:
         url: http://localhost:9000/mongo
         username: jovc
-        password: '{cipher}289156a45e3c5cc16795debd21d728f5dbf1966687724334f864e9c8a46cf458'
+        password: '289156a45e3c5cc16795debd21d728f5dbf1966687724334f864e9c8a46cf458'
 
