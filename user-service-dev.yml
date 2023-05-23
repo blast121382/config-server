@@ -8,10 +8,10 @@ eureka:
 spring:
     data:
         mongodb:
-            host: 192.168.226.128
+            host: 192.168.226.134
             port: 27017
             database: jovc
             #username: ''
             #password: ''
-            uri: mongodb://192.168.226.128:27017
+            uri: mongodb://192.168.226.134:27017
             authentication-database: admin
