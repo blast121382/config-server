@@ -9,8 +9,8 @@ spring:
     cloud:
         gateway:
             routes:
-                - id: user-services
-                  uri: user-services
+                - id: user-service
+                  uri: user-service
                   predicate:
                    - Path=/api/user-service/**
                   filters:
