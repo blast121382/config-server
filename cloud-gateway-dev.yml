@@ -19,4 +19,3 @@ spring:
        - Path=/api/user-services/**
       filter:
        - StripPrefix=2
-				
