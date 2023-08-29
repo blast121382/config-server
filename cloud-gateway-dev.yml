@@ -10,13 +10,13 @@ eureka:
             defaultZone: ${EUREKA.SERVER.HOSTNAME:http://localhost:8761/eureka}
         fetchRegistry: true
 spring:
-	cloud:
-		gateway:
-			routes:
-				- id:	user-service
-				  uri:	user-services
-				  predicates:
-				  	- Path=/api/user-services/**
-				  filter:
-				  	- StripPrefix=2
+ cloud:
+  gateway:
+   routes:
+    - id: user-service
+	  uri: user-services
+      predicates:
+       - Path=/api/user-services/**
+      filter:
+       - StripPrefix=2
 				
