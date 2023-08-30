@@ -14,7 +14,7 @@ spring:
   gateway:
    routes:
     - id: user-service
-      uri: lb://user-services
+      uri: lb://user-service
       predicates:
        - Path=/api/user-services/**
       filter:
