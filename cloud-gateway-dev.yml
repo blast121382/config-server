@@ -26,5 +26,5 @@ spring:
       filters:
        - StripPrefix=2
        - AddRequestParameter=tokens,mitocode
-       - AddRequestParameter=token,mitocode
-       - AddResponseHeade=CUSTOM_RESPONSE_HEADER,HEADER_mitocode
+       - AddRequestHeader=token,mitocode
+       - AddResponseHeader=CUSTOM_RESPONSE_HEADER,HEADER_mitocode
