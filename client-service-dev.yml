@@ -1,5 +1,5 @@
 server:
-    port: ${CUSTOM.SERVER.PORT:9004}
+    port: ${CUSTOM.SERVER.PORT:9001}
 eureka:
     instance:
      prefer-ip-address: true
