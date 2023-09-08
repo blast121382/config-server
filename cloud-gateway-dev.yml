@@ -28,4 +28,8 @@ spring:
        #- AddRequestParameter=tokens,mitocode
        #- AddRequestHeader=token,mitocode
        #- AddResponseHeader=CUSTOM_RESPONSE_HEADER,HEADER_mitocode
-       - CustomFilter=Mitocode,MitocodeValue
+       #- CustomFilter=Mitocode,MitocodeValue
+       - name: CustomFilter
+         args:
+          headerKey=MitocodeKey
+          headerValue=MitocodeValue
