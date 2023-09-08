@@ -19,6 +19,7 @@ spring:
        - Path=/api/user-services/**
       filters:
        - StripPrefix=2
+       - MitocodeFilter=MitocodeKey,MitocodeValue
     - id: product-service
       uri: lb://product-service
       predicates:
