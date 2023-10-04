@@ -9,3 +9,32 @@ eureka:
         service-url:
             defaultZone: ${EUREKA.SERVER.HOSTNAME:http://localhost:8761/eureka}
         fetchRegistry: true
+
+resilience4j:
+ circuitbreaker:
+  configs:
+   mitocode-circuitbreaker-product:
+    slidingWindowSize: 20
+    failureRateThreshold: 75
+    waitDurationInOpenState: 30s
+    permittedNumberOfCallsInHalfOpenState: 10
+    slowCallDurationThreshold: 2s
+    slowCallRateThreshold: 10
+   mitocode-circuitbreaker-user:
+    slidingWindowSize: 50
+    failureRateThreshold: 80
+    waitDurationInOpenState: 15s
+    permittedNumberOfCallsInHalfOpenState: 20
+    slowCallDurationThreshold: 2s
+    slowCallRateThreshold: 10
+  instances:
+   productCB:
+    base-config: mitocode-circuitbreaker-product
+   userCB:
+    base-config: mitocode-circuitbreaker-user
+#feign:
+# client:
+#  config:
+#   default:
+#    connectTimeout: 10000
+#    readTimeout: 20000
