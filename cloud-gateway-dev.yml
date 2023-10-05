@@ -38,6 +38,7 @@ spring:
          args:
           name: product-cb
           fallbackUri: forward:/api/user-service/user
+          statusCodes: 500,400,401,403
 resilience4j:
  circuitbreaker:
   configs:
