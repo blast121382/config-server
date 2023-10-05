@@ -37,6 +37,7 @@ spring:
        - name: CircuitBreaker
          args:
           name: product-cb
+          fallbackUri: forward:/api/user-service/user
 resilience4j:
  circuitbreaker:
   configs:
