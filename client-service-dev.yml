@@ -13,6 +13,7 @@ eureka:
 resilience4j:
  circuitbreaker:
   configs:
+  #puede estar sin rayas
    mitocode-circuitbreaker-product:
     slidingWindowSize: 20
     failureRateThreshold: 75
@@ -32,6 +33,13 @@ resilience4j:
     base-config: mitocode-circuitbreaker-product
    userCB:
     base-config: mitocode-circuitbreaker-user
+ timelimiter:
+  configs:
+   mitocodeTimeLimiterProduct:
+    timeoutDuration: 1s
+  instances:
+   product-timelimite:
+    base-config: mitocodeTimeLimiterProduct
 #feign:
 # client:
 #  config:
