@@ -19,3 +19,32 @@ spring:
             #password: ''
             uri: mongodb://localhost:27017
             authentication-database: admin
+            
+info:
+ app:
+  name: Microservicio Producto Service
+  description: Módulo de la arquitectura que disponibiliza informacion de los Productos
+  version: 1.0.0.-SNAPSHOT
+
+management:
+ audievents:
+  enable: true
+ endpoints:
+  web:
+   exposure:
+    include: '*'
+   base-path:/actuator
+ endpoint:
+  health:
+   group:
+    custom:
+     include: diskSpace, memory
+     show-components: always
+     show-details: always
+ info:
+  env:
+   enable: true
+ health:
+  env:
+   enable: true
+   
