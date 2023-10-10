@@ -58,7 +58,7 @@ spring:
        - name: CircuitBreaker
          args:
           name: product-cb
-          statusCodes: 500,400,401,403,503,504
+          statusCodes: 400,401,403,500,503,504
           fallbackUri: forward:/api/user-services/user
 
 #logging:
