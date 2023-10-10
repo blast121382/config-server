@@ -9,6 +9,27 @@ eureka:
         service-url:
             defaultZone: ${EUREKA.SERVER.HOSTNAME:http://localhost:8761/eureka}
         fetchRegistry: true
+resilience4j:
+ circuitbreaker:
+  configs:
+   mitocodeCircuitbreakerProduct:
+    slidingWindowSize: 20
+    failureRateThreshold: 75
+    waitDurationInOpenState: 30s
+    permittedNumberOfCallsInHalfOpenState: 10
+    slowCallDurationThreshold: 2s
+    slowCallRateThreshold: 10
+  instances:
+   product-cb:
+    base-config: mitocodeCircuitbreakerProduct
+ timelimiter:
+  configs:
+   mitocodeTimeLimiterProduct:
+    timeoutDuration: 1s
+  instances:
+   product-time:
+    base-config: mitocodeTimeLimiterProduct
+    
 spring:
  cloud:
   gateway:
@@ -39,26 +60,7 @@ spring:
           name: product-cb
           #fallbackUri: forward:/api/product-service/product
           statusCodes: 500,400,401,403,503
-resilience4j:
- circuitbreaker:
-  configs:
-   mitocodeCircuitbreakerProduct:
-    slidingWindowSize: 20
-    failureRateThreshold: 75
-    waitDurationInOpenState: 30s
-    permittedNumberOfCallsInHalfOpenState: 10
-    slowCallDurationThreshold: 2s
-    slowCallRateThreshold: 10
-  instances:
-   product-cb:
-    base-config: mitocodeCircuitbreakerProduct
- timelimiter:
-  configs:
-   mitocodeTimeLimiterProduct:
-    timeoutDuration: 1s
-  instances:
-   product-time:
-    base-config: mitocodeTimeLimiterProduct
+
 logging:
  level:
   org:
