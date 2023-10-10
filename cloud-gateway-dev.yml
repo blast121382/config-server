@@ -59,7 +59,7 @@ spring:
          args:
           name: product-cb
           statusCodes: 400, 401, 403, 404, 500, 503, 504
-          fallbackUri: forward:/api/user-services/user
+      #    fallbackUri: forward:/api/user-services/user
 
 #logging:
 # level:
