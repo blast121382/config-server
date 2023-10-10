@@ -9,6 +9,11 @@ eureka:
         service-url:
             defaultZone: ${EUREKA.SERVER.HOSTNAME:http://localhost:8761/eureka}
         fetchRegistry: true
+        healthcheck:
+         enable: true
+        refresh:
+         enable: true
+         
 spring:
     data:
         mongodb:
@@ -22,7 +27,7 @@ spring:
             
 info:
  app:
-  name: Microservicio Producto Service
+  app-name: Microservicio Producto Service
   description: Módulo de la arquitectura que disponibiliza informacion de los Productos
   version: 1.0.0.-SNAPSHOT
 
@@ -38,8 +43,8 @@ management:
   health:
    group:
     custom:
-     include: diskSpace, memory
-     show-components: always
+     include: diskSpace, memory, ping, mem
+     show-component: always
      show-details: always
  info:
   env:
