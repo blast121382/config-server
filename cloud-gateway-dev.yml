@@ -58,4 +58,10 @@ resilience4j:
     timeoutDuration: 1s
   instances:
    product-time:
-    base-config: mitocodeTimeLimiterProduct   
+    base-config: mitocodeTimeLimiterProduct
+logging:
+ level:
+  org:
+   springframework:
+    cloud:
+     gateway: DEBUG
