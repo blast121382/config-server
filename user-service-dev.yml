@@ -9,6 +9,10 @@ eureka:
         service-url:
             defaultZone: ${EUREKA.SERVER.HOSTNAME:http://localhost:8761/eureka}
         fetchRegistry: true
+        healthcheck:
+         enable: true
+        refresh:
+         enable: true
 spring:
     data:
         mongodb:
@@ -19,3 +23,31 @@ spring:
             #password: ''
             uri: mongodb://localhost:27017
             authentication-database: admin
+            
+info:
+ app:
+  app-name: Microservicio User Service
+  description: Módulo de la arquitectura que disponibiliza informacion de los Usuarios
+  version: 1.0.0.-SNAPSHOT
+
+management:
+ audievents:
+  enable: true
+ endpoints:
+  web:
+   exposure:
+    include: '*'
+   base-path: /actuator
+ endpoint:
+  health:
+   group:
+    custom:
+     include: diskSpace, ping
+     show-component: always
+     show-details: always
+ info:
+  env:
+   enable: true
+ health:
+  env:
+   enable: true

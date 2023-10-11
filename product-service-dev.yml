@@ -32,24 +32,11 @@ info:
   version: 1.0.0.-SNAPSHOT
 
 management:
- audievents:
-  enable: true
  endpoints:
   web:
    exposure:
     include: '*'
    base-path: /actuator
- endpoint:
-  health:
-   group:
-    custom:
-     include: diskSpace, ping
-     show-component: always
-     show-details: always
  info:
   env:
    enable: true
- health:
-  env:
-   enable: true
-   
