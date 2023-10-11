@@ -27,16 +27,16 @@ spring:
             
 info:
  app:
-  app-name: Microservicio Producto Service
+  name: Microservicio Producto Service
   description: Módulo de la arquitectura que disponibiliza informacion de los Productos
-  version: 1.0.0.-SNAPSHOT
+  version: 1.0
 
 management:
  endpoints:
   web:
    exposure:
-    include: '*'
+    include: info
    base-path: /actuator
  info:
   env:
-   enable: true
+   enabled: true
