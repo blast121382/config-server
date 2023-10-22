@@ -1,5 +1,5 @@
 server:
- port: ${CUSTOM.SERVER.PORT:8888}
+ port: ${CUSTOM.SERVER.PORT:8088}
 
 eureka:
  instance:
@@ -25,3 +25,9 @@ eureka:
     #password:
     uri: mongodb://localhost:27017
     authentication-database: admin
+
+mitocode:
+ security:
+  client: mitocode
+  secret: mitocode
+  signKey: 9f7f6b91a2fbb33327fff07554e013dbaf653f193a9e995f62ef105524effebbd132bf7a94231a9465477adea288725d87e974339f7fbe3b1ed88919eeb86d909d9946be95d1a7820b37956f9203db07328de8840ceb2141495bae40bd623eb581589b5f7ed6d25c39160ee3fe0a4a164af84ce09b047db157429f819e1b840901ecfb6038fac0cb13b55f9d9fcabb7c3bbe040ea4c5dc6f0abe9b1db907d1c16b72166a78e339d790735683b0d3389c8452d2f26f560d7736fe58f2422cecf7034af724126022b991b1bdbc81f43fba525e568b8619e98a23ed57b6dd17af07
