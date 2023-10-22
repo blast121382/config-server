@@ -1,5 +1,5 @@
 server:
- port: ${CUSTOM.SERVER.PORT:9001}
+ port: ${CUSTOM.SERVER.PORT:8888}
 
 eureka:
  instance:
