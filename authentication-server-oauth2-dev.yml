@@ -15,7 +15,7 @@ eureka:
   refresh:
    enable: true
    
-
+spring:
  data:
   mongodb:
    host: 127.0.0.1
