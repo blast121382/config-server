@@ -20,7 +20,7 @@ eureka:
    mongodb:
     host: localhost
     port: 27017
-    database: jovc
+    database: jovc1
     #username:
     #password:
     uri: mongodb://localhost:27017
